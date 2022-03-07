@@ -1,0 +1,49 @@
+@import url("https://bootswatch.com/5/quartz/bootstrap.css");
+
+body{
+  background:#eee;
+  }
+  .ibox-content {
+      background-color: #e47676;
+      color: inherit;
+      padding: 15px 20px 20px 20px;
+      border-color: #288bce;
+      border-image: none;
+      border-style: solid solid none;
+      border-width: 1px 0px;
+  }
+
+  .search-form {
+      margin-top: 10px;
+  }
+
+  .search-result h3 {
+      margin-bottom: 0;
+      color: #000000;
+  }
+
+  .search-result .search-link {
+      color: #7643b9;
+  }
+
+  .search-result p {
+      font-size: 12px;
+      margin-top: 5px;
+  }
+
+  .hr-line-dashed {
+      border-top: 1px dashed #E7EAEC;
+      color: #ffffff;
+      background-color: #ffffff;
+      height: 1px;
+      margin: 20px 0;
+  }
+
+  h2 {
+      font-size: 24px;
+      font-weight: 100;
+  }
+
+  a{
+    text-decoration:none;
+    }

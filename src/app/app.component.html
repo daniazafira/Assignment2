@@ -1,0 +1,49 @@
+<div class="container bootstrap snippets" >
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 style="margin-left: 29%; padding-top: 1%;">Intelligent Wikipedia Search</h1>
+      <div class="ibox float-e-margins" style="padding-top: 0%;">
+        <div class="ibox-content">
+
+
+          <div class="search-form" style="color: black; ">
+            <form (submit)="onSubmit()" style="border: 100cm; color: blue;">
+              <div class="input-group" style="border: 10cm; color: blue;">
+                <input [(ngModel)]="searchTerm" type="text" style="color: black;" name="search" class="form-control input-lg rounded-pill" placeholder="search here...">
+                <div class="input-group-btn ms-3">
+                  <button class="btn btn-lg btn-primary">
+                    Search
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="hr-line-dashed"></div>
+          <div
+            *ngFor="let result of results | paginate: { itemsPerPage: 15, currentPage: page, totalItems: totalResults }"
+            class="search-result mt-3" style="color: rgb(255, 255, 255);">
+            <a href="https://en.wikipedia.org/wiki?curid={{result.pageid}}"
+              class="search-link">https://en.wikipedia.org/wiki?curid={{result.pageid}}</a>
+
+            <h4>
+              <a href="https://en.wikipedia.org/wiki?curid={{result.pageid}}" style="color: rgb(255, 255, 255);">{{result.title}}</a>
+            </h4>
+
+            <p [innerHtml]="result.snippet">
+            </p>
+            <p>
+            </p>
+          </div>
+
+          <!-- If result is less that 15, display none -->
+          <div class="text-center" *ngIf="results.length > 15">
+            <pagination-controls (pageChange)="page = $event"></pagination-controls>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
